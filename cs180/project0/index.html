@@ -1,15 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 0 — Becoming Friends with Your Camera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid #3182ce;
+            padding-bottom: 0.5rem;
+        }
+        
+        .content {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .image-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .image-caption {
+            padding: 0.75rem;
+            background-color: #f7fafc;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #cbd5e0, transparent);
+            margin: 3rem 0;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My CS180 Portfolio!</h1>
+    <div class="container px-4 py-12">
+        <!-- 头部标题 -->
+        <header class="text-center mb-16">
+            <h1 class="header-title">Project 0 — Becoming Friends with Your Camera</h1>
+            <p class="text-gray-600">The goal of this project is to get some intuitive understanding of the somewhat subtle relationship between perspective, focal length/zoom, and the center of projection.</p>
+        </header>
+
+        <!-- Part 1 -->
+        <section class="mb-16">
+            <h2 class="section-title">Part 1: Selfie — The Wrong Way vs. The Right Way</h2>
+            <div class="content">
+                <p>This part is all about exploring the relationship between distance and aesthetics in phone photography. Think about a typical close-up selfie you've taken. The image is often distorted: your nose seems larger, your eyes might look a bit strange, and your face appears wider than it is in real life. This is a classic example of perspective distortion, a common issue with close-up phone photos. Now, let's try something different. Step back a few feet from your subject, then use your phone's zoom to bring their face back to the same size it was in the close-up shot. Take another picture. You'll likely notice that this new portrait looks much better—the proportions are more natural, and the face appears more three-dimensional and realistic.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="image-container">
+                    <img src="media/img1.jpg" alt="The Wrong Way" class="w-full h-auto bg-gray-200">
+                    <div class="image-caption">The Wrong Way (Close-up)</div>
+                </div>
+                <div class="image-container">
+                    <img src="media/img2.jpg" alt="The Right Way" class="w-full h-auto bg-gray-200">
+                    <div class="image-caption">The Right Way (Farther Away + Zoom)</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Part 2 -->
+        <section class="mb-16">
+            <h2 class="section-title">Part 2: Architectural Perspective Compression</h2>
+            <div class="content">
+                <p>This part of my project focuses on how distance and perspective affect architectural photography. The process is a simple experiment in two steps. First, stand far from a building and use your phone's zoom to take a photo. You'll notice the image looks flattened, with the building appearing compressed against its background. Next, walk closer to that building and, without any zoom, take a second photo, getting the building to appear roughly the same size in your frame. This new shot will have a more dynamic and natural perspective, with a stronger sense of depth and scale. This direct comparison shows how simply changing your distance and focal length fundamentally alters how we perceive the shape and size of a building in a photograph.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="image-container">
+                    <img src="media/img3.jpg" alt="Zoomed from far" class="w-full h-auto bg-gray-200">
+                    <div class="image-caption">Zoomed from far (tele) — flattened look</div>
+                </div>
+                <div class="image-container">
+                    <img src="media/img4.jpg" alt="Closer without zoom" class="w-full h-auto bg-gray-200">
+                    <div class="image-caption">Closer without zoom (wide) — deeper look</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Part 3 -->
+        <section class="mb-16">
+            <h2 class="section-title">Part 3: The Dolly Zoom ("Vertigo shot")</h2>
+            <div class="content">
+                <p>This part focuses on the dolly zoom, a classic film effect also known as the "Vertigo shot" after its famous use in a Hitchcock film. It's a surreal visual trick where you physically move the camera in one direction while simultaneously zooming the lens in the opposite direction. This makes the background appear to stretch and warp dramatically, while the main subject stays the same size in the frame. By learning to create this effect with your phone, you'll gain a deeper understanding of how the relationship between camera movement and zoom can powerfully manipulate a viewer's sense of space and emotion.</p>
+            </div>
+            <div class="flex justify-center">
+                <div class="image-container max-w-2xl">
+                    <!-- Dolly Zoom示例GIF -->
+                    <img src="media/img5.gif" alt="Dolly Zoom Effect" class="w-full h-auto">
+                    <div class="image-caption">Dolly Zoom Effect</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>© 2025 Project 0 — Becoming Friends with Your Camera</p>
+        </footer>
+    </div>
 </body>
 </html>
