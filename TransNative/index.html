@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransNative - 地道英语翻译</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .logo {
+            font-family: 'Quartet BC', 'Arial Black', 'Arial Bold', sans-serif;
+            font-size: 2.8em;
+            background: linear-gradient(90deg, #33ABE0 0%, #2086B5 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: vertical;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        .translation-group {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+        .group-number {
+            font-weight: bold;
+            font-style: italic;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        .translations {
+            margin-top: 20px;
+        }
+        .translation-item {
+            background-color: #ecf0f1;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        .context-item {
+            background-color: #ecf0f1;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #e84393;
+        }
+        .error {
+            color: #e74c3c;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .loading {
+            text-align: center;
+            color: #7f8c8d;
+        }
+        .typing-text {
+            overflow: hidden;
+            border-right: .15em solid #7f8c8d;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end forwards;
+            animation-fill-mode: both;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            0%, 100% { border-color: transparent; }
+            50% { border-color: #7f8c8d; }
+            99% { border-color: #7f8c8d; }
+            100% { border-color: transparent; }
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <h1 class="logo">TransNative</h1>
+        <h2 style="text-align: center; color: #7f8c8d; font-size: 1.2em; margin-top: 0; margin-bottom: 20px;">地道英语翻译</h2>
+        <p id="typingText" style="text-align: center; color: #7f8c8d; font-style: italic;" class="typing-text">“Speak English like a native speaker.”</p>
+        
+        <textarea id="inputText" placeholder="请输入要翻译的中文文本..."></textarea>
+        <textarea id="contextText" placeholder="请输入情景等其他要求...（可选）" style="height: 60px;"></textarea>
+        <button id="translateBtn">翻译</button>
+        
+        <div id="loading" class="loading" style="display: none;">翻译中...</div>
+        <div id="error" class="error" style="display: none;"></div>
+        <div id="translations" class="translations"></div>
+    </div>
+
+    <script>
+        document.getElementById('translateBtn').addEventListener('click', translateText);
+        
+        async function translateText() {
+            const inputText = document.getElementById('inputText').value.trim();
+            const contextText = document.getElementById('contextText').value.trim();
+            const translationsDiv = document.getElementById('translations');
+            const errorDiv = document.getElementById('error');
+            const loadingDiv = document.getElementById('loading');
+            
+            // Reset UI
+            translationsDiv.innerHTML = '';
+            errorDiv.style.display = 'none';
+            
+            if (!inputText) {
+                errorDiv.textContent = '请输入要翻译的文本';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            // Show loading
+            loadingDiv.style.display = 'block';
+            document.getElementById('translateBtn').disabled = true;
+            
+            try {
+                const requestBody = { text: inputText };
+                if (contextText) {
+                    requestBody.context = contextText;
+                }
+                
+                // Use the current host for the API endpoint
+                const apiUrl = `${window.location.protocol}//${window.location.hostname}:8002/translate`;
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestBody),
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`翻译失败: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Display translations
+                if (data.translations && data.translations.length > 0) {
+                    translationsDiv.innerHTML = '<h3>翻译结果:</h3>';
+                    data.translations.forEach((translation, index) => {
+                        // Create a container for each group
+                        const groupElement = document.createElement('div');
+                        groupElement.className = 'translation-group';
+                        
+                        // Add group number
+                        const groupNumberElement = document.createElement('div');
+                        groupNumberElement.className = 'group-number';
+                        groupNumberElement.textContent = `${index + 1}`;
+                        groupElement.appendChild(groupNumberElement);
+                        
+                        // Check if the translation contains context information (in parentheses)
+                        const contextMatch = translation.match(/^(.*)\s*\(([^)]+)\)\s*$/);
+                        
+                        if (contextMatch) {
+                            // Create separate elements for translation and context
+                            const translationElement = document.createElement('div');
+                            translationElement.className = 'translation-item';
+                            translationElement.textContent = contextMatch[1].trim();
+                            groupElement.appendChild(translationElement);
+                            
+                            const contextElement = document.createElement('div');
+                            contextElement.className = 'context-item';
+                            contextElement.textContent = `(${contextMatch[2].trim()})`;
+                            groupElement.appendChild(contextElement);
+                        } else {
+                            // Create element for translation without context
+                            const translationElement = document.createElement('div');
+                            translationElement.className = 'translation-item';
+                            translationElement.textContent = translation;
+                            groupElement.appendChild(translationElement);
+                        }
+                        
+                        translationsDiv.appendChild(groupElement);
+                    });
+                } else {
+                    errorDiv.textContent = '未找到翻译结果';
+                    errorDiv.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Translation error:', error);
+                errorDiv.textContent = `翻译出错: ${error.message}`;
+                errorDiv.style.display = 'block';
+            } finally {
+                // Hide loading
+                loadingDiv.style.display = 'none';
+                document.getElementById('translateBtn').disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  transnative:
+    build: .
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - .:/app
+    command: python main.py
+    networks:
+      - transnative-network
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./certs:/etc/nginx/certs
+    depends_on:
+      - transnative
+    networks:
+      - transnative-network
+
+networks:
+  transnative-network:
+    driver: bridge
