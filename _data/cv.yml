@@ -16,14 +16,10 @@ cv:
         location: Shanghai, China
         url: https://en.tongji.edu.cn/
         area: Applied Chemistry
-        studyType: B.S.
+        studyType: Bachelor of Science
         start_date: 2023
         end_date: 2027
         score: ""
-        courses: "Theory of Relativity"
-        highlights:
-          - Description 1.
-          - Description 2.
 
       - institution: University of California, Berkeley
         location: Berkeley, CA, USA
@@ -31,9 +27,6 @@ cv:
         studyType: Visiting Student
         start_date: 2025
         end_date: 2025
-        highlights:
-          - Description 1.
-          - Description 2.
 
     Languages:
       - name: English
