@@ -9,8 +9,7 @@ last_name: Ou
 contact_note: >
   You can even add a little note about which of these is the best way to reach you.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  I’m a senior undergraduate student at Tongji University. I’m currently a research intern at DeepDelta Lab at Shanghai Jiao Tong University, where I work with Prof. Shaobo Cui. My research interests center around AI for Science, especially the use of machine learning to support scientific discovery and understand complex data. 
-  I’m always happy to discuss research ideas and explore opportunities for collaboration. Feel free to reach out!
+  Jincheng Ou's academic website.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
