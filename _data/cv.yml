@@ -26,9 +26,6 @@ cv:
         url: https://www.berkeley.edu
         image: /assets/img/berkeley.png
         area: Computer Science
-        location: Berkeley, CA, USA
-        url: https://www.berkeley.edu
-        area: Computer Science
         studyType: Visiting Student
         courses: ["Deep Learning", "Agentic AI"]
         start_date: 2025
