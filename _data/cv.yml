@@ -11,7 +11,7 @@ cv:
 
   sections:
     Education:
-      - institution: Tongji University
+      - institution: '<img src="/assets/img/tongji.png" style="height: 1.2em; vertical-align: -0.2em; margin-right: 0.35em;"> Tongji University'
         location: Shanghai, China
         url: https://en.tongji.edu.cn
         image: "asstes/img/tongji.png"
@@ -21,7 +21,7 @@ cv:
         end_date: 2027
         score: ""
 
-      - institution: University of California, Berkeley
+      - institution: '<img src="/assets/img/berkeley.png" style="height: 1.2em; vertical-align: -0.2em; margin-right: 0.35em;"> University of California, Berkeley'
         location: Berkeley, CA, USA
         url: https://www.berkeley.edu
         image: "asstes/img/berkeley.png"
