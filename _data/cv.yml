@@ -11,7 +11,7 @@ cv:
 
   sections:
     Education:
-      - institution: '<img src="/assets/img/tongji.png" style="height: 1.2em; vertical-align: -0.2em; margin-right: 0.35em;"> Tongji University'
+      - institution: "<img src='/assets/img/tongji.png' style='height: 1.3em; width: 1.3em; vertical-align: -0.25em; margin-right: 6px;'>Tongji University"
         location: Shanghai, China
         url: https://en.tongji.edu.cn
         area: Applied Chemistry
@@ -20,7 +20,10 @@ cv:
         end_date: 2027
         score: ""
 
-      - institution: '<img src="/assets/img/berkeley.png" style="height: 1.2em; vertical-align: -0.2em; margin-right: 0.35em;"> University of California, Berkeley'
+      - institution: "<img src='/assets/img/berkeley.png' style='height: 1.3em; width: 1.3em; vertical-align: -0.25em; margin-right: 6px;'>University of California, Berkeley"
+        location: Berkeley, CA, USA
+        url: https://www.berkeley.edu
+        area: Computer Science
         location: Berkeley, CA, USA
         url: https://www.berkeley.edu
         area: Computer Science
