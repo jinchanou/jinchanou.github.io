@@ -26,6 +26,7 @@ cv:
         url: https://www.berkeley.edu
         area: Computer Science
         studyType: Visiting Student
+        courses: ["Deep Learning", "Agentic AI"]
         start_date: 2025
         end_date: 2026
 
