@@ -22,6 +22,6 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-I’m a senior undergraduate student at Tongji University, currently a research intern at [DeepDelta Lab](https://github.com/deepdelta) at Shanghai Jiao Tong University under the guidance of Prof. [Shaobo Cui](https://shaobo.info/). My research interests center around AI for Science, especially the use of machine learning to support scientific discovery and understand complex data. 
+I’m a senior undergraduate student at Tongji University, currently a research intern at [DeepDelta Lab](https://deepdeltalab.github.io/) at Shanghai Jiao Tong University under the guidance of Prof. [Shaobo Cui](https://shaobo.info/). My research interests center around AI for Science, especially the use of machine learning to support scientific discovery and understand complex data. 
 
 I’m always happy to discuss research ideas and explore opportunities for collaboration. Feel free to reach out!
