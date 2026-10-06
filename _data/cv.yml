@@ -21,7 +21,7 @@ cv:
         end_date: 2027
         score: ""
 
-      - nstitution: University of California, Berkeley
+      - institution: University of California, Berkeley
         location: Berkeley, CA, USA
         url: https://www.berkeley.edu
         image: /assets/img/berkeley.png
