@@ -14,6 +14,7 @@ cv:
       - institution: Tongji University
         location: Shanghai, China
         url: https://en.tongji.edu.cn
+        image: "asstes/img/tongji.png"
         area: Applied Chemistry
         studyType: Bachelor of Science
         start_date: 2023
@@ -23,6 +24,7 @@ cv:
       - institution: University of California, Berkeley
         location: Berkeley, CA, USA
         url: https://www.berkeley.edu
+        image: "asstes/img/berkeley.png"
         area: Computer Science
         studyType: Visiting Student
         courses: ["Deep Learning", "Agentic AI"]
@@ -39,15 +41,15 @@ cv:
     Interests:
       - name: AI for Science
         icon: fa-solid fa-atom
-        keywords: "Scientific Discovery, Machine Learning, Complex Data Analysis, Domain-Knowledge Integration"
+        keywords: "Machine Learning, GNN, Graph Learning"
 
       - name: Agentic AI & Foundation Models
         icon: fa-solid fa-brain
-        keywords: "Large Language Models, Complex Reasoning, LLMs for Scientific Discovery"
+        keywords: "Large Language Models, Reasoning, LLMs for Scientific Discovery"
 
       - name: Computational Chemistry
         icon: fa-solid fa-flask
-        keywords: "Chemical Informatics, Molecular Modeling, Structure-Property Prediction, Empirical Data Mining"
+        keywords: "Chemical Informatics, Molecular Modeling, Empirical Data Mining"
 
     References:
       - name: Prof. Shaobo Cui
