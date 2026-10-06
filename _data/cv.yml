@@ -27,7 +27,7 @@ cv:
         image: /assets/img/berkeley.png
         area: Computer Science
         studyType: Visiting Student
-        courses: ["[Deep Learning](https://berkeley-cs182.github.io/fa25/)", "[Agentic AI](https://agenticai-learning.org/f25)"]
+        courses: ["Deep Learning", "Agentic AI"]
         start_date: 2025
         end_date: 2026
 
