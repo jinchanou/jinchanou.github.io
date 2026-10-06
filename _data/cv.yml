@@ -11,18 +11,20 @@ cv:
 
   sections:
     Education:
-      - institution: "<img src='/assets/img/tongji.png' style='height: 1.3em; width: 1.3em; vertical-align: -0.25em; margin-right: 6px;'>Tongji University"
+      - institution: Tongji University
         location: Shanghai, China
         url: https://en.tongji.edu.cn
+        image: /assets/img/tongji.png
         area: Applied Chemistry
         studyType: Bachelor of Science
         start_date: 2023
         end_date: 2027
         score: ""
 
-      - institution: "<img src='/assets/img/berkeley.png' style='height: 1.3em; width: 1.3em; vertical-align: -0.25em; margin-right: 6px;'>University of California, Berkeley"
+      - nstitution: University of California, Berkeley
         location: Berkeley, CA, USA
         url: https://www.berkeley.edu
+        image: /assets/img/berkeley.png
         area: Computer Science
         location: Berkeley, CA, USA
         url: https://www.berkeley.edu
