@@ -9,14 +9,15 @@ last_name: Ou
 contact_note: >
   You can even add a little note about which of these is the best way to reach you.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  I’m a senior undergraduate student at Tongji University. I’m currently a research intern at DeepDelta Lab at Shanghai Jiao Tong University, where I work with Prof. Shaobo Cui. My research interests center around AI for Science, especially the use of machine learning to support scientific discovery and understand complex data. 
+  I’m always happy to discuss research ideas and explore opportunities for collaboration. Feel free to reach out!
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords:  # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: 🤖 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: 🐼 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
 
 url: https://jinchanou.github.io
