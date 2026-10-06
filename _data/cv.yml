@@ -2,7 +2,6 @@ cv:
   name: Jincheng Ou
   email: jinchanou12@gmail.com
   image: ""
-  summary: Test
 
   social_networks:
     - network: GitHub
@@ -38,12 +37,19 @@ cv:
         summary: "Native Speaker"
 
     Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: AI for Science
+        icon: fa-solid fa-atom
+        keywords: "Scientific Discovery, Machine Learning, Complex Data Analysis, Domain-Knowledge Integration"
+
+      - name: Agentic AI & Foundation Models
+        icon: fa-solid fa-brain
+        keywords: "Large Language Models, Complex Reasoning, LLMs for Scientific Discovery"
+
+      - name: Computational Chemistry
+        icon: fa-solid fa-flask
+        keywords: "Chemical Informatics, Molecular Modeling, Structure-Property Prediction, Empirical Data Mining"
 
     References:
-      - name: Professor Shaobo Cui
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-        
+      - name: Prof. Shaobo Cui
+        icon: fa-solid fa-chalkboard-user
+        reference: "Assistant Professor, School of Artificial Intelligence, Shanghai Jiao Tong University. Principal Investigator, DeepDelta Lab."
