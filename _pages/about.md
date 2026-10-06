@@ -24,7 +24,7 @@ latest_posts:
 ---
 I’m a senior undergraduate student at <img src="/assets/img/tongji.png"
      alt=""
-     style="width: 18px; height: 18px; vertical-align: -3px;">Tongji University, currently a research intern at <img src="/assets/img/deepdelta-logo.png"
+     style="width: 18px; height: 18px; vertical-align: 0px;">Tongji University, currently a research intern at <img src="/assets/img/deepdelta-logo.png"
      alt=""
      style="width: 18px; height: 18px; vertical-align: -3px;">[DeepDelta Lab](https://deepdeltalab.github.io/) at <img src="/assets/img/sjtu.png"
      alt=""
