@@ -15,7 +15,7 @@ cv:
         location: Shanghai, China
         url: https://en.tongji.edu.cn
         image: /assets/img/tongji.png
-        area: Applied Chemistry
+        # area: Applied Chemistry
         studyType: Bachelor of Science
         start_date: 2023
         end_date: 2027
